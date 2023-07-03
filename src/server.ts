@@ -13,24 +13,25 @@ app.use(bodyParser.json());
 // Create an Elasticsearch client with elastic cloud credentials
 const client = new Client({
   cloud: {
-    id:"",
+    id: process.env.ES_CLOUD_ID,
   },
   auth: {
-    apiKey: "",
+    apiKey: process.env.ES_CLOUD_API_KEY,
   },
 });
 
 // Define a route to handle POST requests to /webhook
 
 app.post("/webhook", async (req: Request, res: Response) => {
-  const elkData: ElkData = req.body;
+  const elkData: ElkData  = req.body;
   console.log("Received data:", elkData);
 
   try {
     await client.index({
-      index: "test-myindex",
+      index: process.env.ES_INDEX,
       body: elkData,
     });
+    console.log("Data indexed in Elasticsearch")
     res.send("Data indexed in Elasticsearch");
   } catch (error) {
     console.error("Error indexing data:", error);

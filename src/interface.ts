@@ -1,36 +1,11 @@
 export interface ElkData {
-    created_at: string;
-    language: string;
-    media: string;
+    created_at: Date;
     title: string;
     body: string;
-    type: string;
     url: string;
-    tags: string;
-    accepted_answer_id: string;
+    tags: string[];
     domain: string;
     body_type: string;
-    thread_url: string;
     categories: string;
     authors: string[];
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

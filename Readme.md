@@ -11,6 +11,6 @@
 
 ## Setup localtunnel
 
-- Install localtunnel `yarn -g localtunnel`
-- Run `lt --port 3000` to start the tunnel
+- In another terminal, install localtunnel `npm install -g localtunnel`
+- To expose the application to the internet, run `lt --port 3000`
 - Copy the url generated and paste it in the appscript in the sheet extension where it says `webhookUrl`

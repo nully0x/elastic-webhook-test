@@ -8,4 +8,5 @@ export interface ElkData {
     body_type: string;
     categories: string;
     authors: string[];
+    indexed_at: Date;
   }
